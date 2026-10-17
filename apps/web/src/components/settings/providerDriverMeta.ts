@@ -2,6 +2,7 @@ import {
   AntigravitySettings,
   ClaudeSettings,
   CodexSettings,
+  OmpSettings,
   ProviderDriverKind,
 } from "@t3tools/contracts";
 import { acpRegistryClient } from "@t3tools/provider-acp-registry/client";
@@ -34,4 +35,9 @@ export const providerClients = makeProviderClientRegistry([
   museClient,
   piClient,
   acpRegistryClient,
+  {
+    driverKind: ProviderDriverKind.make("omp"),
+    label: "Oh My Pi",
+    settingsSchema: OmpSettings,
+  },
 ]);

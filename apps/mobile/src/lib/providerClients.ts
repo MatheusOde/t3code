@@ -1,4 +1,4 @@
-import { isProviderDriverKind } from "@t3tools/contracts";
+import { isProviderDriverKind, OmpSettings, ProviderDriverKind } from "@t3tools/contracts";
 import { acpRegistryClient } from "@t3tools/provider-acp-registry/client";
 import { makeProviderClientRegistry } from "@t3tools/provider-core/client";
 import { cursorClient } from "@t3tools/provider-cursor/client";
@@ -14,6 +14,7 @@ const providerClients = makeProviderClientRegistry([
   openCodeClient,
   piClient,
   acpRegistryClient,
+  { driverKind: ProviderDriverKind.make("omp"), label: "Oh My Pi", settingsSchema: OmpSettings },
 ]);
 
 export function getProviderClient(driver: string | null | undefined) {

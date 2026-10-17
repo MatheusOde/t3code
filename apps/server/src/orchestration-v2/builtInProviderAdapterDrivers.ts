@@ -1,3 +1,4 @@
+import { OmpAdapterV2Driver, type OmpDriverEnv } from "../provider/Drivers/OmpDriver.ts";
 import type { ProviderDriverKind } from "@t3tools/contracts";
 
 import {
@@ -28,7 +29,8 @@ export type BuiltInProviderAdapterDriversV2Env =
   | CursorAdapterV2DriverEnv
   | GrokAdapterV2DriverEnv
   | OpenCodeAdapterV2DriverEnv
-  | PiAdapterV2DriverEnv;
+  | PiAdapterV2DriverEnv
+  | OmpDriverEnv;
 
 const BUILT_IN_PROVIDER_ADAPTER_DRIVERS_V2: ReadonlyArray<
   AnyProviderAdapterDriver<BuiltInProviderAdapterDriversV2Env>
@@ -40,6 +42,7 @@ const BUILT_IN_PROVIDER_ADAPTER_DRIVERS_V2: ReadonlyArray<
   GrokAdapterV2Driver,
   PiAdapterV2Driver,
   AcpRegistryAdapterV2Driver,
+  OmpAdapterV2Driver,
 ];
 
 export const BUILT_IN_PROVIDER_ADAPTER_DRIVER_KINDS_V2: ReadonlySet<ProviderDriverKind> = new Set(

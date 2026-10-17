@@ -1,3 +1,4 @@
+import { OmpDriver, type OmpDriverEnv } from "./Drivers/OmpDriver.ts";
 import {
   AcpRegistryDriver,
   type AcpRegistryDriverEnv,
@@ -24,7 +25,8 @@ export type BuiltInDriversEnv =
   | GrokDriverEnv
   | OpenCodeDriverEnv
   | PiDriverEnv
-  | MuseDriverEnv;
+  | MuseDriverEnv
+  | OmpDriverEnv;
 
 export const BUILT_IN_DRIVERS: ReadonlyArray<AnyProviderDriver<BuiltInDriversEnv>> = [
   CodexDriver,
@@ -36,6 +38,7 @@ export const BUILT_IN_DRIVERS: ReadonlyArray<AnyProviderDriver<BuiltInDriversEnv
   PiDriver,
   MuseDriver,
   AcpRegistryDriver,
+  OmpDriver,
 ];
 
 export type BuiltInUsageReadersEnv =
